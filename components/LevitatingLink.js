@@ -1,6 +1,11 @@
+import smoothScroll from './SmoothScoll.js'
+
 export default function LevitatingLink ({ href, children }) {
+  const handleClick = () => {
+    smoothScroll.scrollTo(href.split('#')[1])
+  }
   return (
-    <a href={href}>
+    <a href={href} onClick={handleClick}>
       <span className='text'>{children}</span>
       <style jsx>{`
         a {
